@@ -3,7 +3,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-GAMERS_proj/player.dat
+src/images/
 
 ### Eclipse ###
 .apt_generated

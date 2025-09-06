@@ -7,6 +7,9 @@ import java.awt.event.KeyEvent;
 public class Player implements KeyListener, ActionListener {
 
     private int score;
+    private int lives = 5;
+    private int positionY;
+    private int positionX;
 
 
     public Player( int score) {
@@ -21,6 +24,30 @@ public class Player implements KeyListener, ActionListener {
             return true;
         }
         return false;
+    }
+
+    public void moveUp(Player player, KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_W) {
+            player.positionY += 10;
+        }
+    }
+
+    public void moveDown(Player player, KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_S) {
+            player.positionY -= 10;
+        }
+    }
+
+    public void moveRight(Player player, KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_D) {
+            player.positionX += 10;
+        }
+    }
+
+    public void moveLeft(Player player, KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_A) {
+            player.positionX -= 10;
+        }
     }
 
     @Override
