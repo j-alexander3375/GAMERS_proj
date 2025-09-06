@@ -1,8 +1,12 @@
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.*;
 import javax.swing.*;
 
-public class Main {
+public class Main implements KeyListener {
 
     // Methods and classes used to build dynamic fullscreen window.
     static Toolkit tk = Toolkit.getDefaultToolkit();
@@ -28,6 +32,28 @@ public class Main {
         frame.add(label, BorderLayout.CENTER);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+                    System.exit(0);
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent keyEvent) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent keyEvent) {
 
     }
 }
